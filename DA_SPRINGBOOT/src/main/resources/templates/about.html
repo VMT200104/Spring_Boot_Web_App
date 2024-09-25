@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head-link"></head>
+<body>
+<div class="site-wrap">
+  <header th:replace="layout :: header"></header>
+
+  <div class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-0"><a th:href="@{index}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section border-bottom" data-aos="fade">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="block-16">
+            <figure>
+              <img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
+              <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="ion-md-play"></span></a>
+
+            </figure>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+
+
+          <div class="site-section-heading pt-3 mb-4">
+            <h2 class="text-black">How We Started</h2>
+          </div>
+          <p>Welcome to our store! We started with a simple dream: to bring quality and stylish outfits to everyone. From our first designs, we have constantly strived to offer the best products to our customers.</p>
+          <p>We take pride in using the finest materials and exquisite tailoring techniques. Each of our products is made with passion and a love for fashion.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section border-bottom" data-aos="fade">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 site-section-heading text-center pt-4">
+          <h2>The Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+
+          <div class="block-38 text-center">
+            <div class="block-38-img">
+              <div class="block-38-header">
+                <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
+                <h3 class="block-38-heading h4">Elizabeth Graham</h3>
+                <p class="block-38-subheading">CEO/Co-Founder</p>
+              </div>
+              <div class="block-38-body">
+                <p>Elizabeth has over 10 years of experience in the fashion industry and is the creative force behind all our unique designs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="block-38 text-center">
+            <div class="block-38-img">
+              <div class="block-38-header">
+                <img src="images/person_2.jpg" alt="Image placeholder" class="mb-4">
+                <h3 class="block-38-heading h4">Jennifer Greive</h3>
+                <p class="block-38-subheading">Co-Founder</p>
+              </div>
+              <div class="block-38-body">
+                <p>Jennifer is responsible for all our marketing campaigns and ensures that our brand is widely known.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="block-38 text-center">
+            <div class="block-38-img">
+              <div class="block-38-header">
+                <img src="images/person_3.jpg" alt="Image placeholder" class="mb-4">
+                <h3 class="block-38-heading h4">Patrick Marx</h3>
+                <p class="block-38-subheading">Marketing</p>
+              </div>
+              <div class="block-38-body">
+                <p>Patrick ensures that each of our products meets the highest quality standards before reaching our customers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="block-38 text-center">
+            <div class="block-38-img">
+              <div class="block-38-header">
+                <img src="images/person_4.jpg" alt="Image placeholder" class="mb-4">
+                <h3 class="block-38-heading h4">Mike Coolbert</h3>
+                <p class="block-38-subheading">Sales Manager</p>
+              </div>
+              <div class="block-38-body">
+                <p>Mike leads our sales team and works tirelessly to provide the best customer service experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
+          <div class="icon mr-4 align-self-start">
+            <span class="icon-truck"></span>
+          </div>
+          <div class="text">
+            <h2 class="text-uppercase">Free Shipping</h2>
+            <p>Enjoy free shipping on all orders over $50. We ensure your products arrive on time and in perfect condition.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon mr-4 align-self-start">
+            <span class="icon-refresh2"></span>
+          </div>
+          <div class="text">
+            <h2 class="text-uppercase">Free Returns</h2>
+            <p>If you're not satisfied with your purchase, we offer free returns within 30 days for a hassle-free experience.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon mr-4 align-self-start">
+            <span class="icon-help"></span>
+          </div>
+          <div class="text">
+            <h2 class="text-uppercase">Customer Support</h2>
+            <p>Our customer support team is here to help you with any questions or concerns you may have, 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer th:replace="layout :: footer"></footer>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head-link"></head>
+<body>
+<div class="site-wrap">
+	<header th:replace="layout :: header"></header>
+
+
+	<div class="bg-light py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mb-0"><a th:href="@{home}">Home</a> <span class="mx-2 mb-0">/</span> <strong
+						class="text-black">Sign Up</strong></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="h3 mb-3 text-black">Sign Up</h2>
+				</div>
+
+			</div>
+
+			<div class="col-md-7">
+
+				<form th:action="@{/login}" method="post">
+					<div class="card-header">
+						<p class="fs-4 text-center">Login</p>
+						<div th:if="${param.error}"
+							 class="alert alert-danger text-center">
+
+							<th:block
+									th:if="${session.SPRING_SECURITY_LAST_EXCEPTION!=null}">
+								[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
+							</th:block>
+						</div>
+
+						<div th:if="${param.logout}" class="alert alert-success">
+							Logout Sucessfully</div>
+					</div>
+					<div class="p-3 p-lg-5 border">
+						<div class="form-group row">
+							<div class="col-md-12">
+								<label for="username" class="text-black">Username <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" required id="username" name="username"
+									   placeholder="Username">
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-md-12">
+								<label for="password" class="text-black">Password <span class="text-danger">*</span></label>
+								<input type="password" class="form-control" required id="password" name="password"
+									   placeholder="Password">
+							</div>
+						</div>
+						<div class="form-check d-flex justify-content-start mb-4">
+							<input type="checkbox" class="form-check-input" name="remember-me" id="remember-me">
+							<label
+									class="form-check-label" for="remember-me"> Remember me
+							</label>
+						</div>
+						<div class="d-grid gap-2 form-action">
+							<button type="submit" class="btn btn-primary btn-lg btn-block" >Login</button>
+							<p class="mt-3 mb-0">Don't have an account? <a class="text-info text-center" th:href="${'/register'}">Sign
+								up?</a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer th:replace="layout :: footer"></footer>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>

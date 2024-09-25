@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head-link"></head>
+<body>
+<div class="site-wrap">
+	<header th:replace="layout :: header"></header>
+
+	<div class="bg-light py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Tank Top T-Shirt</strong></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<img th:src="@{'/img/product_img/'+${product.image}}" alt="Image" class="img-fluid">
+				</div>
+				<div class="col-md-6">
+					<h2 class="text-black">[[${product.title}]]</h2>
+					<p>[[${product.description}]]</p>
+					<p>Status :
+						<th:block th:if="${product.stock>0}">
+							<span class="badge bg-success">Available</span>
+						</th:block>
+
+						<th:block th:unless="${product.stock>0}">
+							<span class="badge bg-warning">out of stock</span>
+						</th:block>
+
+						<br> Category: [[${product.category}]]
+					</p>
+					<p><strong class="text-primary h4">[[${product.price}]]</strong></p>
+
+					<div class="mb-5">
+						<div class="input-group mb-3" style="max-width: 120px;">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+							</div>
+							<input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+							<div class="input-group-append">
+								<button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+							</div>
+						</div>
+
+					</div>
+
+
+					<th:block th:if="${product.stock>0}">
+						<th:block th:if="${user==null}">
+							<a href="/signin" class="buy-now btn btn-sm btn-primary">Add To
+								Cart</a>
+						</th:block>
+
+						<th:block th:unless="${user==null}">
+							<a
+									th:href="@{'/user/addCart?pid='+${product.id}+'&uid='+${user.id}}"
+									class="buy-now btn btn-sm btn-primary">Add To Cart</a>
+						</th:block>
+
+					</th:block>
+
+					<th:block th:unless="${product.stock>0}">
+						<a href="#" class="buy-now btn btn-sm btn-primary">Out
+							of Stock</a>
+					</th:block>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div  th:replace="layout :: Featured"></div>
+	<footer th:replace="layout :: footer"></footer>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
